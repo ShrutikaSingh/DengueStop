@@ -1,6 +1,6 @@
 # DengueStop
 
-## Currently this is in Android on the way to refactoring in React-Native :)
+
 
 
 An estimated 400 million dengue infections occur worldwide each year, with about 96 million resulting in illness. DengueStop Community App is a step towards saving millions of lives by preventing the spread of dengue along with raising awareness among people to eradicate it.
