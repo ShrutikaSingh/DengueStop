@@ -20,9 +20,4 @@ public class IamADoctor extends AppCompatActivity {
         Intent i = new Intent(this, DoctorsLogin.class);
         startActivity(i);
     }
-
-    public void regDoctor(View view) {
-        Intent i = new Intent(this, RegisterDoctor.class);
-        startActivity(i);
-    }
 }
