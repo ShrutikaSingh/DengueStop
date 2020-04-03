@@ -1,6 +1,6 @@
 # DengueStop
 
-## Currently this is in Android on the way to refactoring in React-Native along with adding more features to this android app too :)
+## Currently this is in Android on the way to refactoring in React-Native (that can be found at https://github.com/ShrutikaSingh/DengueStop-React-Native ) along with adding more features to this android app too :)
 
 
 
