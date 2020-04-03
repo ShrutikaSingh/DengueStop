@@ -27,7 +27,7 @@ public class DateSelectorForEpidemicMap extends AppCompatActivity {
     private Calendar calendar;
     private TextView dateFrom;
     private TextView dateTo;
-    private int year, month, day, date;
+    private int year, month, day;
 
     DatabaseReference myRef;
     MyValueEventListener listener;
@@ -60,8 +60,8 @@ public class DateSelectorForEpidemicMap extends AppCompatActivity {
                                           int monthOfYear, int dayOfMonth) {
 
                         dateFrom.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-                        
-                       Toast.makeText(DateSelectorForEpidemicMap.this,String.valueOf(from_mills),Toast.LENGTH_SHORT).show();
+                        from_mills = new Date(year, monthOfYear, dayOfMonth).getTime();
+//                        Toast.makeText(DateSelectorForEpidemicMap.this,String.valueOf(from_mills),Toast.LENGTH_SHORT).show();
 
                     }
                 }, year, month, day);
@@ -93,22 +93,7 @@ public class DateSelectorForEpidemicMap extends AppCompatActivity {
     }
 
     private class MyValueEventListener implements ValueEventListener {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            Log.d("Data Snapshot:", dataSnapshot.toString());
 
-            epidemicArrayList.clear();
-
-            for (DataSnapshot epidemic : dataSnapshot.getChildren()) {
-
-                Log.e(epidemic.getKey(), epidemic.toString());
-                Epidemic e = epidemic.getValue(Epidemic.class);
-                assert e != null;
-                epidemicArrayList.add(e);
-            }
-
-            myRef.removeEventListener(listener);
-        }
 
         @Override
         public void onCancelled(DatabaseError databaseError) {
