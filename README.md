@@ -1,5 +1,6 @@
 # DengueStop
 
+## Currently this is in Android on the way to refactoring in React-Native :)
 
 
 
