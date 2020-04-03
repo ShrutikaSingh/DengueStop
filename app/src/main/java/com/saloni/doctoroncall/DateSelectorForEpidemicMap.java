@@ -93,7 +93,22 @@ public class DateSelectorForEpidemicMap extends AppCompatActivity {
     }
 
     private class MyValueEventListener implements ValueEventListener {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            Log.d("Data Snapshot:", dataSnapshot.toString());
 
+            epidemicArrayList.clear();
+
+            for (DataSnapshot epidemic : dataSnapshot.getChildren()) {
+
+                Log.e(epidemic.getKey(), epidemic.toString());
+                Epidemic e = epidemic.getValue(Epidemic.class);
+                assert e != null;
+                epidemicArrayList.add(e);
+            }
+
+            myRef.removeEventListener(listener);
+        }
 
         @Override
         public void onCancelled(DatabaseError databaseError) {
