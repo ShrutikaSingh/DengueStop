@@ -27,7 +27,7 @@ public class DateSelectorForEpidemicMap extends AppCompatActivity {
     private Calendar calendar;
     private TextView dateFrom;
     private TextView dateTo;
-    private int year, month, day;
+    private int year, month, day, date;
 
     DatabaseReference myRef;
     MyValueEventListener listener;
@@ -60,8 +60,8 @@ public class DateSelectorForEpidemicMap extends AppCompatActivity {
                                           int monthOfYear, int dayOfMonth) {
 
                         dateFrom.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-                        from_mills = new Date(year, monthOfYear, dayOfMonth).getTime();
-//                        Toast.makeText(DateSelectorForEpidemicMap.this,String.valueOf(from_mills),Toast.LENGTH_SHORT).show();
+                        
+                       Toast.makeText(DateSelectorForEpidemicMap.this,String.valueOf(from_mills),Toast.LENGTH_SHORT).show();
 
                     }
                 }, year, month, day);
